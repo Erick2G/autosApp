@@ -3,7 +3,14 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
+var mongoose = require('mongoose');//----- added
+mongoose.connect('mongodb+srv://developer:QbXe7jqXrSzli7qz@cluster0-8hels.gcp.mongodb.net/autosdb',
+{useNewUrlParser:true}).then(
+()=>{
+	console.log('Connected');
+});
+//QbXe7jqXrSzli7qz  cambiar passwor por la contrasenia
+//cambiar test por nombre autosdb
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var galeriaRouter=require('./routes/galeria');//------ added
